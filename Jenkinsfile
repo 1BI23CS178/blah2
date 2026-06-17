@@ -6,15 +6,17 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout') {
             steps {
-                git 'https://github.com/1BI23CS178/blah2.git'
+                git branch: 'main',
+                    url: 'https://github.com/1BI23CS178/blah2.git'
             }
         }
 
         stage('Compile') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn clean compile'
             }
         }
 
